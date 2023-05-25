@@ -34,7 +34,7 @@ export default function TextForm(props) {
                 <p><b>{text.split(' ').length}</b> words and Characters are <b>{text.length}</b></p>
                 <p>{0.008 * text.length}</p>
                 <h3>Privew of Inputs</h3>
-                <p>{text}</p>
+                <p>{text.length>0?text:"Enter the Text Here"}</p>
             </div>
         </div>
     )
