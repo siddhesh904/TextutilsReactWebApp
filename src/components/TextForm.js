@@ -7,7 +7,7 @@ export default function TextForm(props) {
         setText(newText)
     }
     const handleRePunc = ()=>{
-        let newStr = /[.,/#!$%^&*;:{}=-_`~()]/g;
+        let newStr = /[.,/#!$%^&*;:{}=-_`~()]/;
 
         let newText = text.replace(newStr,'')
         setText(newText);
@@ -21,10 +21,10 @@ export default function TextForm(props) {
     }
     const [text,setText] = useState("");
     return (
-        <div className="container">
+        <div className="container" style ={{color:props.mode === 'dark'?'white':'black'}}>
             <div className="mb-3">
                 <h1>{props.title}</h1>
-                <textarea className="form-control" value ={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="10"></textarea>
+                <textarea className="form-control" value ={text} onChange={handleOnChange} id="exampleFormControlTextarea1" style = {  {backgroundColor:props.mode==='light'?'white':'#21476e',color:props.mode === 'dark'?'white':'black'}} rows="10"></textarea>
             </div>
             <button className="btn btn-primary" onClick={handleUpClick}>Convert to UpperCase</button>
             <button className="btn btn-primary mx-3" onClick={handleLowClick}>Convert to LowerCase</button>
